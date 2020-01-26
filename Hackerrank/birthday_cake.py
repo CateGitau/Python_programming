@@ -23,8 +23,8 @@ arr = [3,2,1,3]
 
 def birthdayCakeCandles(arr):
     candles = 0
+    maxim = max(arr)
     for i in range(len(arr)):
-        maxim = max(arr)
         if arr[i] == maxim:
             candles += 1
     return candles
