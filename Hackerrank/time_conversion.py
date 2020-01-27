@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-S
 """
 Created on Sun Jan 26 17:49:48 2020
 
@@ -30,13 +30,9 @@ def timeConversion(s):
     elif time_day == 'AM' and s[0:2] == '12':
         hr = '00'
     
-    
     return hr + s[2:-2]
         
     #print(''.join(hr, mm, sec))
     
 print(timeConversion(s))            
             
-
-    
-    
