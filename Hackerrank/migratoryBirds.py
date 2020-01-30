@@ -16,10 +16,14 @@ def migratoryBirds(arr):
             dic[arr[i]] = 1
         else:
             dic[arr[i]] += 1
+    out = [0, 0]     
+    for i in set(arr):
+        if dic[i] > out[1]:
+            out = [i, dic[i]]
     
-    maxim = (max(dic, key = dic.get))
+    #maxim = (max(dic, key = dic.get))
             
-    return maxim
+    return out[0]
 
 print(migratoryBirds(arr))
 
