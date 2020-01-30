@@ -1,0 +1,12 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Jan 30 10:10:09 2020
+
+@author: aims
+"""
+
+def sudoku(s):
+    for i in range(len(s)):
+        for j in range(len(s[i])):
+            
