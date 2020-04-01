@@ -16,5 +16,9 @@ indices = [[0,1],[1,1]]
 row = [0]*n
 col = [0]*m
 
-print(row)
-print(col)
+
+for r,c in indices:
+    row[r] += 1
+    col[c] += 1
+
+print(sum([ (r+c)%2 for c in col for r in row]) )
