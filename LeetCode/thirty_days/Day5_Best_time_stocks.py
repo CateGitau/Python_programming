@@ -8,9 +8,15 @@ Note: You may not engage in multiple transactions at the same time
 (i.e., you must sell the stock before you buy again).
 """
 
-price = [7,6,4,3,1]
+
+# optimal solution
+# Time complexity O(n)
+# space complexity (O(1))
+
+price = [1,3,17,180]
 max_prof = []
 for i in range(len(price[:-1])): 
+    #print(i)
     sell = 0
     buy = 0
     if  price[i] > price[i+1]:
