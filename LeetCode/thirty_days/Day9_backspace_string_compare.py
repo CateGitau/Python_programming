@@ -50,8 +50,8 @@ def backspaceCompare(S, T):
 # Iterate through the string in reverse. If we see a backspace 
 # character, the next non-backspace character is skipped. 
 # If a character isn't skipped, it is part of the final answer.
-
-def backspaceCompare2(self, S, T):
+import itertools
+def backspaceCompare2(S, T):
     def F(S):
         skip = 0
         for x in reversed(S):
@@ -62,8 +62,8 @@ def backspaceCompare2(self, S, T):
             else:
                 yield x
 
-    return all(x == y for x, y in itertools.izip_longest(F(S), F(T)))
+    return all(x == y for x, y in itertools.zip_longest(F(S), F(T)))
 
 
-print(backspaceCompare(S, T))
+print(backspaceCompare2(S, T))
           
