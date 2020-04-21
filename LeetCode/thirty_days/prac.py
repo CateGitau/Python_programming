@@ -1,6 +1,5 @@
-s = "abcd"
+nums= [1,2,3,4]
 
+ans = [1 for _ in nums]
 
-#s = s + s[0]
-
-print(s[:-1])
+print(ans)
