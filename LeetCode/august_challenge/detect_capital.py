@@ -36,12 +36,12 @@ print(detectCapital(a))
 ## oooorrrr:
 
 def easiersol(a):
-    if word.isupper():
-                return True
-            elif word[0].isupper() & word[1:].islower():
-                return True
-            elif word.islower():
-                return True
-            else:
-                return False
+    if a.isupper():
+        return True
+    elif a[0].isupper() & a[1:].islower():
+        return True
+    elif a.islower():
+        return True
+    else:
+        return False
 
