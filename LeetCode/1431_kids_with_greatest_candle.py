@@ -11,16 +11,31 @@ the kids such that he or she can have the greatest number of candies among them.
 candies = [2,3,5,1,3]
 extra = 3
 
-def great_candies(candies, extraCandies):
+def great_candies(candies, extra):
+    maxCandy = max(candies)
     res = []
-    for i in range(len(candies)):
-        p = candies[i]+extra
-        if p >= max(candies):
+    for i in candies:
+        if i + extra >= maxCandy:
             res.append(True)
         else:
             res.append(False)
-
     return res
+
+
+
+# candies = [2,3,5,1,3]
+# extra = 3
+
+# def great_candies(candies, extraCandies):
+#     res = []
+#     for i in range(len(candies)):
+#         p = candies[i]+extra
+#         if p >= max(candies):
+#             res.append(True)
+#         else:
+#             res.append(False)
+
+    #return res
 
 
 
