@@ -2,6 +2,7 @@
 '''
 We need to insert a new object at the end of the linked list. You can naturally guess, that this newly added node will point to None as it is at the tail.
 '''
+#time complexity is O(n) because it traverses the whole list
 
 class Node:
     def __init__(self, data):
@@ -50,9 +51,38 @@ def insert_at_tail(lst, value):
         current.next_element = new_node
         return
 
+def insert_at_position(lst, value, position):
+    #new element
+    new_element = Node(value)
+
+    #checking if head is None
+    if lst.get_head() is None:
+        new_element.next_element = lst.head_node
+        lst.head_node = new_element
+        return
+    
+    counter = 1
+    current = lst.get_head()
+
+    while current and counter < position:
+        if current == position -1:
+            new_element.next_element = current.next_element
+            current.next_element = new_element
+
+        current = current.next_element
+        counter +=1
+    return
+
+
+
+#test
+
+
 lst = LinkedList()
 insert_at_tail(lst, 1)
 insert_at_tail(lst, 2)
 insert_at_tail(lst, 3)
+
+#print(insert_at_position(lst, 6, 2))
 
 print(lst.print_list())
