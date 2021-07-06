@@ -56,33 +56,46 @@ def insert_at_position(lst, value, position):
     new_element = Node(value)
 
     #checking if head is None
-    if lst.get_head() is None:
-        new_element.next_element = lst.head_node
-        lst.head_node = new_element
-        return
+    # if lst.get_head() is None:
+    #     new_element.next_element = lst.head_node
+    #     lst.head_node = new_element
+    #     return
     
     counter = 1
     current = lst.get_head()
 
-    while current and counter < position:
-        if current == position -1:
-            new_element.next_element = current.next_element
-            current.next_element = new_element
+    if position > 1:
+        while current and counter < position:
+            if counter == position - 1:
+                new_element.next_element = current.next_element
+                current.next_element = new_element
 
-        current = current.next_element
-        counter +=1
+            current = current.next_element
+            counter +=1
+
+    elif position ==1:
+        new_element.next = current
+        current = new_element
+
     return
 
 
 
+'''
+In deletion In the worst case, you would have to traverse until the end of the list. This means the time complexity will be O(n).
+'''
+
+
 #test
+if __name__ == "__main__":
 
+    lst = LinkedList()
+    insert_at_tail(lst, 1)
+    insert_at_tail(lst, 2)
+    insert_at_tail(lst, 3)
 
-lst = LinkedList()
-insert_at_tail(lst, 1)
-insert_at_tail(lst, 2)
-insert_at_tail(lst, 3)
+    print(insert_at_position(lst, 6, 2))
 
-#print(insert_at_position(lst, 6, 2))
+    print(lst.print_list())
 
-print(lst.print_list())
+    print(search_recursive(lst.get_head(), 3))

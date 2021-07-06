@@ -9,3 +9,7 @@ Created on Mon Feb  3 11:13:49 2020
 arr = "1,2,3,4"
 
 print(' '.join(map(str, arr[::-1])))
+
+arr = [1,2,3,4]
+
+print(arr[::-1])

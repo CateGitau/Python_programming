@@ -114,3 +114,14 @@ def delete(lst, value):
         print(str(value) + " deleted!")
 
     return deleted
+
+#test
+
+lst = LinkedList()
+lst.insert_at_head(1)
+lst.insert_at_head(4)
+lst.insert_at_head(3)
+lst.insert_at_head(2)
+lst.print_list()
+delete(lst, 4)
+lst.print_list()

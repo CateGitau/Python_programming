@@ -52,23 +52,22 @@ class LinkedList:
         print(temp.data, "-> None")
         return True
 
-#iterative solution
-#0(1) space complexity
-def search(lst, value):
-    # start from the first element
+'''The time complexity for this algorithm is O(n). 
+However, the space complexity for the recursive approach is also O(n), whereas the iterative solution can do it in O(1) space complexity.'''      
 
-    current = lst.get_head()
+def search_iterative(lst, value):
 
-    while current:
-        if current.data == value:
-            return True
-        #else, continue traversing
-        current = current.next_element
-    return False
+    # Start from first element
+    current_node = lst.get_head()
 
-#recursive solution
-#O(n) space complexity 
-def search(node, value):
+    # Traverse the list till you reach end
+    while current_node:
+        if current_node.data == value:
+            return True  # value found
+        current_node = current_node.next_element
+    return False  # value not found
+
+def search_recursive(node, value):
 
     # Base case
     if(not node):
@@ -79,7 +78,7 @@ def search(node, value):
         return True  # value found
 
     # Recursive call to next node in the list
-    return search(node.next_element, value)
+    return search_recursive(node.next_element, value)
 
 
 #test
@@ -88,6 +87,5 @@ lst.insert_at_tail(1)
 lst.insert_at_tail(2)
 lst.insert_at_tail(3)
 
-print(search(lst, 2))
-
-print(lst.print_list())
+print(search_recursive(lst.get_head(), 2))
+lst.print_list()
