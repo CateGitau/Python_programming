@@ -27,23 +27,18 @@ class Node(object):
 
 # def is_bst(root):
 #   return is_bst_rec(root, -sys.maxsize - 1, sys.maxsize)
-def is_bst_satisfied():
-    def helper(node, lower=float('-inf'), upper=float('inf')):
-        if not node:
-            return True
+def is_bst_rec(root, min_value, max_value):
+  if root == None:
+    return True
 
-        node = root
-        val = node.data
-        if val <= lower or val >= upper:
-            return False
+  if root.data < min_value or root.data > max_value:
+    return False
 
-        if not helper(node.right, val, upper):
-            return False
-        if not helper(node.left, lower, val):
-            return False
-        return True
+  return is_bst_rec(root.left, min_value, root.data) and is_bst_rec(root.right, root.data, max_value)
 
-    return helper(root)
+def is_bst(root):
+  return is_bst_rec(root, -sys.maxsize - 1, sys.maxsize)
+
 
 #
 #           8
@@ -57,13 +52,16 @@ def is_bst_satisfied():
 
 
 
-root = Node(8)
-root.left = Node(3)
-root.right = Node(10)
-root.left.left = Node(1)
-root.left.right = Node(6)
-root.right.left = Node(9)
-root.right.right = Node(11)
+root = Node(100)
+root.left = Node(50)
+root.right = Node(200)
+# root.left.left = Node(1)
+# root.left.right = Node(2)
+# # root.right.left = Node()
+# root.right.right = Node(9)
 
-print(is_bst_satisfied()) 
+if is_bst(root) == True:
+    print('True')
+else:
+    print('False')
 

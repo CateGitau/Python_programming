@@ -4,16 +4,18 @@ class Node(object):
         self.left = None
         self.right = None
 
-
 def are_identical(root1, root2):
     if root1 == None and root2 == None:
         return True
     
     else:
-        return (root1.value == root2.value and
-                are_identical(root1.left, root2.left) and 
-                are_identical(root1.right, root2.right))
+        return  (root1.value == root2.value and
+            are_identical(root1.left, root2.left) and
+            are_identical(root1.right, root2.right))
+
     return False
+
+
 
 
 

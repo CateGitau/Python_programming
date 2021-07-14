@@ -17,7 +17,7 @@ def inorderIterative(root):
     # start from the root node (set current node to the root node)
     curr = root
  
-    # if the current node is None and the stack is also empty, we are done
+    # if the current node is None and the stack is also empty, we are done999
     while stack or curr:
  
         # if the current node exists, push it into the stack (defer it)

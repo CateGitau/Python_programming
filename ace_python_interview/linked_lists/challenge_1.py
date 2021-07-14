@@ -98,4 +98,4 @@ if __name__ == "__main__":
 
     print(lst.print_list())
 
-    print(search_recursive(lst.get_head(), 3))
+    # print(search_recursive(lst.get_head(), 3))
