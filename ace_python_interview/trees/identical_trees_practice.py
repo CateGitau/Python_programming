@@ -1,20 +1,16 @@
-class Node(object):
+class Node:
     def __init__(self, value):
         self.value = value
         self.left = None
         self.right = None
 
-def are_identical(root1, root2):
+def is_identical(root1, root2):
     if root1 == None and root2 == None:
         return True
-    
-    else:
-        return  (root1.value == root2.value and
-            are_identical(root1.left, root2.left) and
-            are_identical(root1.right, root2.right))
-
-    return False
-
+    if root1 != None and root2!= None:
+        return (root1.value == root2.value and 
+        is_identical(root1.left, root2.left) and
+        is_identical(root1.right, root2.right))
 
 
 
@@ -35,7 +31,7 @@ root2.right.left = Node(250)
 root2.right.right = Node(350)
 
 
-if are_identical(root1, root2):
+if is_identical(root1, root2):
     print('are identical')
 else:
     print('are not identical')

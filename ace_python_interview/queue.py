@@ -29,7 +29,7 @@ class MyQueue:
             return None
         front = self.front()
 
-        self.queue_list.remove(self.front())
+        self.queue_list.remove(front)
         self.queue_size -=1
         return front
 

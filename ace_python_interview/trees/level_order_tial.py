@@ -1,4 +1,3 @@
-from collections import defaultdict
 from collections import deque
 
 class Node(object):
@@ -14,22 +13,23 @@ class BinaryTree(object):
     def levelorder_print(self, start):
         if start is None:
             return
-
+        
         queue = deque()
         queue.append(start)
 
         traverse = ''
+
         while queue:
             node = queue.popleft()
-            traverse+= str(node.value) + '-'
+            traverse += str(node.value) + '-'
 
             if node.left:
                 queue.append(node.left)
 
             if node.right:
                 queue.append(node.right)
-
         return traverse
+
 
 
 
