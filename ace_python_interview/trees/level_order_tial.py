@@ -10,25 +10,27 @@ class BinaryTree(object):
     def __init__(self, root):
         self.root = Node(root)
 
-    def levelorder_print(self, start):
-        if start is None:
-            return
-        
-        queue = deque()
-        queue.append(start)
 
-        traverse = ''
+    def levelorder_print(self, root):
+        if root == None:
+            return 
+
+        queue = deque()
+        queue.append(root)
+
+        traversal = ''
 
         while queue:
+            traversal+= str(queue[0].value) + '-'
             node = queue.popleft()
-            traverse += str(node.value) + '-'
 
             if node.left:
                 queue.append(node.left)
 
             if node.right:
                 queue.append(node.right)
-        return traverse
+
+        return traversal
 
 
 
