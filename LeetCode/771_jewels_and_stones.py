@@ -25,7 +25,7 @@ print(numJewelsInStones(J, S))
 
 # optimal
 
-def numJewelsInStones(J,S):
+def numJewelsInStones2(J,S):
     answer = 0
     for i in J:
         answer += S.count(i)

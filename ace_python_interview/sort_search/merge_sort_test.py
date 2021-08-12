@@ -1,6 +1,8 @@
 def merge_sort(lst):
-    if len(lst) > 1:
+
+    if len(lst) >  1:
         mid = len(lst) // 2
+
         left = lst[:mid]
         right = lst[mid:]
 
@@ -17,18 +19,19 @@ def merge_sort(lst):
             else:
                 lst[k] = right[j]
                 j+=1
-
             k+=1
-        
+
         while i < len(left):
             lst[k] = left[i]
             i+=1
             k+=1
-        
+
         while j < len(right):
             lst[k] = right[j]
             j+=1
             k+=1
+
+    
 
 # Driver code to test the above code
 if __name__ == '__main__':
@@ -37,3 +40,4 @@ if __name__ == '__main__':
     merge_sort(lst)
 
     print("Sorted list is: ", lst)
+

@@ -1,17 +1,16 @@
 def binary_search(lst, left, right, key):
     while left <= right:
+
         mid = left + (right - left) // 2
 
         if lst[mid] == key:
             return mid
 
-        elif lst[mid] < key:
-            left = mid +1
-        
-        else:
+        elif lst[mid] > key:
             right = mid - 1
-        
-    return - 1
+
+        else:
+            left = mid + 1
 
 
 # Driver to test above code
@@ -27,3 +26,6 @@ if __name__ == '__main__':
         print("Element is present at index:", result)
     else:
         print("Element is not present in the list")
+
+
+ 
